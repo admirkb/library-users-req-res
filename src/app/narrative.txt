@@ -1,0 +1,24 @@
+ng new angular-library --prefix al
+
+// Creates entry in angular.json and folder called projects with reqres within
+
+ng generate library reqres --prefix rr
+
+// Two classes in our app. Not sure why --project=reqres yet!
+
+ng generate class model/user --project=reqres
+ng generate class model/users --project=reqres
+
+It made classed in app folder, so manually copied to projects.
+
+// Now let’s make our new models available for use. In the projects/reqres/src/public_api.ts file, add the following:
+
+Add following to public_api.ts;
+export * from './lib/model/user';
+export * from './lib/model/users';
+
+In projects../lib folder i did:
+ng generate component users --project=reqres
+
+
+ng build reqres
